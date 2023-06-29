@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SearchIT</title>
+    <base href>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Silk Display Regular', sans-serif;
+      }
+
+      body {
+        background-color: #FFFFFF;
+        font-family: 'Silk Display Regular', sans-serif;
+        color: #084884;
+        font-size: 17px;
+      }
+
+      /* Logo styles */
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: auto;
+        top:0;
+        z-index:1000;
+        padding: 4px;
+      }
+
+      .udsmlogo {
+        display: flex;
+        align-items: center;
+        margin-left: 410px;
+        padding: 4px;
+      }
+
+      .title {
+        font-size: 30px;
+        font-weight: 400;
+        text-align: center;
+        color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, white 6%, #1b78ae 75%);
+      }
+
+      .title-text {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 240px;
+      }
+
+      .udsmlogo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .udsmlogo img {
+        width: 40%;
+        height: 40%;
+      }
+
+      .logo img {
+        width: 35%;
+        height: 40%;
+      }
+
+      /* Search box styles */
+      .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
+      }
+
+      .search-input {
+        font-size: 24px;
+        padding: 10px;
+        border: none;
+        background: linear-gradient(to right, #1B78AE, #084884);
+        color: #f5f5f5;
+        width: 400px;
+        border-radius: 4px;
+      }
+
+      .search-input::placeholder {
+        color: lightgrey;
+      }
+
+      .search-box button {
+        font-size: 22px;
+        padding: 10px 30px;
+        background-color: #1B78AE;
+        color: #FFFFFF;
+        border-color: rgb(3, 12, 12);
+        border: none;
+        border-radius: 4px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-box button:hover {
+        background-color: #010C80;
+      }
+
+
+      /* Results list styles */
+      .search-results {
+        padding: 20px;
+        list-style-type: none;
+      }
+
+      .result-item {
+        font-size: 28px;
+        padding: 10px;
+        color: #0c0101;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .result-item .city {
+        font-weight: bold;
+      }
+
+      .result-item .growth {
+        font-weight: bold;
+      }
+
+      .positive-growth {
+        color: green;
+      }
+
+      .negative-growth {
+        color: red;
+      }
+      .search-results {
+      list-style-type: none;
+      padding: 0;
+    }
+    .search-result {
+      margin-bottom: 5px;
+      padding: 5px;
+      border: 2.3px solid #1B78AE;
+      background-color: #E4EFF5;
+      color: #084884;
+    }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="topnav" id="myTopnav">
+        <div class="title" style="background:linear-gradient(90deg,white 6%,#1b78ae 75%);">
+          <div class="logo">
+            <a href="https://dhis2.udsm.ac.tz/#/home" title="UDSM DHIS2 LAB">
+              <img src="lab-logo (1).png" alt="Logo" class="logo">
+            </a>
+          </div>
+          <div class="title-text">searchIT</div>
+          <div class="udsmlogo">
+            <a href="https://www.udsm.ac.tz" title="University of Dar es Salaam">
+              <img src="udsm-logo.png" alt="Logo">
+            </a>   
+          </div>
+        </div>        
+      </div>
+    </header>  
+
+    <div class="search-box">
+      <form onsubmit="event.preventDefault(); searchCities()">
+        <h3>Search a city or state in the US</h3>
+        <input type="text" id="searchInput" class="search-input" placeholder="City or State">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  
+    <ul id="searchResults" class="search-results"></ul>
+  
+    <script src="script.js"></script>
+    
+  </body>
+</html>
